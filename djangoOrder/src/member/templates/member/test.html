@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container" align="center">
+		<form id="write" method="post" action="{% url 'member:write' %}" >
+			{% csrf_token %}
+			<textarea id="mywidget-{{ widget.name }}" name="{{ widget.name }}">
+			{% if widget.value %}{{ widget.value }}{% endif %}</textarea>
+		</form>
+		</div>
+{% endblock content %}

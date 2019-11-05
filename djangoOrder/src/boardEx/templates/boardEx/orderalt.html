@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+<head>
+<meta charset="utf-8" />
+<title>자바스크립트 시작</title>
+{% if article %}
+<script>
+var x = document.getElementbyId('id') = {{article.id}}
+document.write(x);
+</script>
+{% endif %}
+</head>
+<body>
+{% if member == False %}
+<script>
+alert('로그인 후 이용해주시기 바랍니다.');
+document.location.href="http://127.0.0.1:2424/login/login/"
+</script>
+{% endif %}
+	<form id="orderalt" action="" method="post">
+	{% csrf_token %}
+		<table border="1">
+			<tr><th>회원 아이디</th><td><input name="omid" readonly type="text" value={{member.mid}}></td></tr>
+			<tr><th>배송지</th><td>{{member.maddress}}&nbsp;{{member.maddress_detail}}</td></tr>
+			<tr><th>상품명</th><td>{{article.name}}</td></tr>
+			<tr><th>상품번호</th><td><input name="oaid" readonly type="text" value={{article.id}}></td></tr>
+			<tr><th>가격</th><td>{{article.price}}</td></tr>
+			<tr><th>분류</th><td>{{article.bun}}</td></tr>
+			<tr><th>단위</th>
+				<td><input type="text" name="oquantity" value="1"class="num" readonly >{{article.dan}}</td>
+				<td>
+					<div class="bt_up" style="background:cyan;width:30px;">↑</div>
+					<div class="bt_down" style="background:cyan;width:30px;">↓</div>
+				</td>
+			</tr>
+			<tr><th>판매업체번호</th><td>{{article.company}}</td></tr>
+			<tr><th>결제 수단</th><td>(카드,무통장입금 등등...(생략))</td></tr>
+		
+		<tr><td colspan="2"><button type="submit" class="btn btn-primary">주문하기</button>
+		<button type="button" class="btn btn-primary" onclick="location.href='/boardEx/list'">뒤로가기</button></td></tr>
+		</table>
+		</form>
+<script type="text/javascript">
+$(function(){ 
+	  $('.bt_up').click(function(){ 
+	    var n = $('.bt_up').index(this);
+	    var num = $(".num:eq("+n+")").val();
+	    num = $(".num:eq("+n+")").val(num*1+1); 
+	  });
+	  $('.bt_down').click(function(){ 
+	    var n = $('.bt_down').index(this);
+	    var num = $(".num:eq("+n+")").val();
+	    num = $(".num:eq("+n+")").val(num*1-1); 
+	  });
+	}) 
+</script>
+</body>
+</html>
+{% endblock content %}
+
+

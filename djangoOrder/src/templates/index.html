@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block content %}
+<style type="text/css">
+.jumbotron {
+background-color:#E2F5F6;
+background-image:url('/static/images/');
+}
+</style>
+
+<!-- 자세히 알아보기에서 활용할 모달창  -->
+<div class="modal" id="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">코딩 부스터의 특징</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					저희 서비스의 특징은 바로 인터넷 강의를 들을 수 있다는 점입니다. <br> 특히 다양한 무료 강의가 유튜브와
+					연동되어 제공됩니다.<br> <br> <img
+						src="/static/images/LOGOBIG.png" id="imagepreview"
+						style="width: 256px; height: 256px;">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">&times;</button>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</head>
+
+<body id="start">
+	<div id="header_div"></div>
+	<div class="container">
+		<div class="jumbotron">
+			<p class="text-center">
+				<a class="btn btn-info" href="/boardEx/list/" role="button">쇼핑하기</a>
+			</p>
+		</div>
+		<div class="alert alert-primary" role="alert">특가 상품</div>
+		<div class="card-group">
+			<div class="card" style="width: 15rem;">
+				<img src="/static/images/600.jpg" style="width: 256px; height: 256px;"
+					class="card-img-top" alt="NANI">
+				<div class="card-body">
+					<h5 class="card-title">
+						<span class="badge badge-secondary bg-danger">33%</span>&nbsp;&nbsp;에어팟
+						<a class="btn btn-light" href="/boardEx/view/3/">보러 가기</a>
+					</h5>
+					<p class="card-text"></p>
+				</div>
+			</div>
+			<div class="card" style="width: 15rem;">
+				<img src="/static/images/d006d6ccd97919fcd6a74cb71a4fcee2.jpg" style="width: 256px; height: 256px;" class="card-img-top" alt="NANI">
+				<div class="card-body">
+					<h5 class="card-title">
+						<span class="badge badge-secondary bg-danger">52%</span>&nbsp;&nbsp;음료수 10종
+						<a class="btn btn-light" href="/boardEx/view/4/">보러 가기</a>
+					</h5>
+					<p class="card-text"></p>
+				</div>
+			</div>
+			<div class="card" style="width: 15rem;">
+				<img src="/static/images/190499946_02.jpg" style="width: 256px; height: 256px;"
+					class="card-img-top" alt="NANI">
+				<div class="card-body">
+					<h5 class="card-title">
+						<span class="badge badge-secondary bg-danger">40%</span>&nbsp;&nbsp;건전지
+						<a class="btn btn-light" href="/boardEx/view/2/">보러 가기</a>
+					</h5>
+					<p class="card-text"></p>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="alert alert-primary" role="alert">카테고리</div>
+		<div class="card-group">
+			<div class="card" style="width: 15rem;">
+				<img src="/static/images/gamemaxvegas_2_1.jpg" style="width: 256px; height: 256px;"
+					class="card-img-top" alt="NANI">
+				<div class="card-body">
+					<h5 class="card-title">
+						<span class="badge badge-secondary bg-danger">HOT</span>&nbsp;&nbsp;가전/디지털
+					</h5>
+					<p class="card-text"></p>
+				</div>
+			</div>
+			<div class="card" style="width: 15rem;">
+				<img src="/static/images/1000014010402_i1_1200.jpg" style="width: 256px; height: 256px;" class="card-img-top" alt="NANI">
+				<div class="card-body">
+					<h5 class="card-title">
+						<span class="badge badge-secondary bg-danger">HOT</span>&nbsp;&nbsp;식품
+					</h5>
+					<p class="card-text"></p>
+				</div>
+			</div>
+			<div class="card" style="width: 15rem;">
+				<img src="/static/images/gbbbf.jpg" style="width: 256px; height: 256px;"
+					class="card-img-top" alt="NANI">
+				<div class="card-body">
+					<h5 class="card-title">
+						<span class="badge badge-secondary bg-danger"></span>&nbsp;&nbsp;스포츠/레저
+					</h5>
+					<p class="card-text"></p>
+				</div>
+			</div>
+		</div>
+		<div class="card-group">
+			<div class="card" style="width: 15rem;">
+				<img src="/static/images/1308028726_L1.jpg" style="width: 256px; height: 256px;"
+					class="card-img-top" alt="NANI">
+				<div class="card-body">
+					<h5 class="card-title">
+						<span class="badge badge-secondary bg-danger"></span>&nbsp;&nbsp;주방용품
+					</h5>
+					<p class="card-text"></p>
+				</div>
+			</div>
+			<div class="card" style="width: 15rem;">
+				<img src="/static/images/10843401977886.jpg" style="width: 256px; height: 256px;"
+					class="card-img-top" alt="NANI">
+				<div class="card-body">
+					<h5 class="card-title">
+						<span class="badge badge-secondary bg-danger"></span>&nbsp;&nbsp;생활용품
+					</h5>
+					<p class="card-text"></p>
+				</div>
+			</div>
+			<div class="card" style="width: 15rem;">
+				<img src="/static/images/neogift032.jpeg" style="width: 256px; height: 256px;" class="card-img-top" alt="NANI">
+				<div class="card-body">
+					<h5 class="card-title">
+						<span class="badge badge-secondary bg-danger"></span>&nbsp;&nbsp;문구/오피스
+					</h5>
+					<p class="card-text"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% endblock content %}

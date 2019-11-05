@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<div class="container" align="center">
+		<h1>상품 상세보기</h1>
+		<form action="" method="post">
+		<table class="table">
+
+			<tr>
+				<th>이름</th>
+				<td>{{article.name}}</td>
+			</tr>
+			<tr>
+				<th>가격</th>
+				<td>{{article.price}}</td>
+			</tr>
+			<tr>
+				<th>이미지</th>
+				<td>{{article.image}}</td>
+			</tr>
+			<tr>
+				<th>판매업체번호</th>
+				<td>{{article.company}}</td>
+			</tr>
+
+		</table>
+		<div>제품 간단한 설명(.....)</div><br>
+		</form>
+		<button type="submit" class="btn btn-primary"
+			onclick="location.href='/boardEx/orderalt/{{article.id}}'">주문하기</button>
+		<button type="button" class="btn btn-primary"
+			onclick="location.href='/boardEx/list'">뒤로가기</button>
+	</div><br>
+	<div align="center">제품 상세 설명<br>......<br>......<br>......<br>......</div>
+	<script type="text/javascript">
+	$(function(){ 
+		  $('.bt_up').click(function(){ 
+		    var n = $('.bt_up').index(this);
+		    var num = $(".num:eq("+n+")").val();
+		    num = $(".num:eq("+n+")").val(num*1+1); 
+		  });
+		  $('.bt_down').click(function(){
+		    var n = $('.bt_down').index(this);
+		    	var num = $(".num:eq("+n+")").val();
+		    if(1<num){
+		    	num = $(".num:eq("+n+")").val(num*1-1); 
+		    }
+		  });
+		}) 
+	</script>
+
+{% endblock content %}

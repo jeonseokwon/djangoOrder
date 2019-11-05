@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<div class="container" align="center">
+	<br><br>
+		<table id="example" class="table table-striped table-bordered"
+			style="width: 100%">
+			<tr>
+				<th>아이디</th>
+				<th>비밀번호</th>
+				<th>이름</th>
+				<th>전화번호</th>
+				<th>우편번호</th>
+				<th>상세주소</th>
+				<th>주소</th>
+			</tr>
+			<tr>
+				{% for member in memberList %}
+				<tr>
+					<td><a href="/member/view/{{member.mid}}">{{member.mid}}</a></td>
+					<td>{{member.mpassword}}</td>
+					<td>{{member.mname}}</td>
+					<td>{{member.mphone}}</td>
+					<td>{{member.mpost_no}}</td>
+					<td>{{member.maddress}}</td>
+					<td>{{member.maddress_detail}}</td>
+				</tr>
+				{% endfor %}
+			</tr>
+
+		</table>
+		<button type="button" class="btn btn-primary"
+			onclick="location.href='/member/write'">회원가입</button>
+	</div>
+{% endblock content %}

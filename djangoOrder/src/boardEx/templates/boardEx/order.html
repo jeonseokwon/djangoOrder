@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.is_active %}
+	<table id="example" class="table table-striped table-bordered"
+			style="width: 100%">
+			<thead>
+				<tr>
+				<th width="25%">이름</th>
+				<th>가격</th>
+				<th>이미지</th>
+				<th width="20%"></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for article in articleList %}
+				<tr>
+					<td><a href="/boardEx/view/{{article.id}}">{{article.name}}</a></td>
+					<td>{{article.price}}</td>
+					<td><button type="button" class="btn btn-primary"
+			onclick="location.href='#'">장바구니에 담기</button></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	<p>이메일:&nbsp;{{user.email}}</p>
+	<p>가입일:&nbsp;{{user.date_joined}}</p>
+	<p>가입일:&nbsp;{{user.date_joined}}</p>
+{% endif %}
+{% endblock content %}
+
+

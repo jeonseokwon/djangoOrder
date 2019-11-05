@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container" align="center">
+		<h1>회원정보(view.html)</h1>
+		<table class="table">
+
+			<tr>
+				<th>아이디</th>
+				<td>{{member.mid}}</td>
+			</tr>
+			<tr>
+				<th>패스워드</th>
+				<td>{{member.mpassword}}</td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td>{{member.mname}}</td>
+			</tr>
+			<tr>
+				<th>전화번호</th>
+				<td>{{member.mphone}}</td>
+			</tr>
+			<tr>
+				<th>우편번호</th>
+				<td>{{member.mpost_no}}</td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td>{{member.maddress}}</td>
+			</tr>
+			<tr>
+				<th>상세주소</th>
+				<td>{{member.maddress_detail}}</td>
+			</tr>
+		</table>
+		<button type="button" class="btn btn-primary"
+			onclick="location.href='/member/list'">목록</button>
+		<button type="button" class="btn btn-primary" onclick="location.href='/boardEx/write'">상품 등록</button>
+		<button type="button" class="btn btn-primary" onclick="location.href='/boardEx/orderlist'">주문 목록</button>
+	</div>
+{% endblock content %}
